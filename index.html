@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOC</title>
+        <script src="./bvtoav.js"></script>
+        <script src="./get.js"></script>
+    </head>
+    <body>
+       <script  type="text/javascript">
+           var av= $_GET['av'];
+           var bv= $_GET['bv'];
+           if (av == null || av == "" || av == undefined) {
+	            if (bv == null || bv == "" || bv == undefined) {
+		            alert("no");
+	            } else {
+		            var dav = bvtoav(bv);
+                    document.write("<p>"+dav+"</p>");
+	            }
+            } else {
+	            if (bv == null || bv == "" || bv == undefined) {
+                    var str = av;
+	                var reg = new RegExp("a","g");
+	                var av = str.replace(reg,"");
+                    var str = av;
+	                var reg = new RegExp("v","g");
+	                var av = str.replace(reg,"");
+		            var dbv = avtobv(av);
+                    document.write("<p>"+dbv+"</p>");
+	            } else {
+		            alert("no");
+	            }
+            }
+        </script>
+    </body>
+</html>
